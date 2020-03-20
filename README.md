@@ -1,4 +1,4 @@
-# Food_Tracker
+# Food_Tracker (Name: TBD)
 ## Introduction
 ### Purpose
 The purpose of the Stress Eating Tracker is to track not only a user’s diet, but also what external and internal stressors and factors contribute to the diet. According to Pavlovian Theory, people’s behaviors can be triggered by certain stimulus and this tracker seeks to, over time, zero in on what stimulus cause users to eat. By doing this, the tracker can help users determine what factors and stimulus cause the hunger response and react accordingly.
