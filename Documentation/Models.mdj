@@ -9563,11 +9563,11 @@
 												"$ref": "AAAAAAFw+jRXYsei1VA="
 											},
 											"font": "Arial;13;1",
-											"left": 221,
+											"left": 197,
 											"top": 478,
-											"width": 190,
+											"width": 214,
 											"height": 13,
-											"text": "Food_Tracker Database"
+											"text": "Food_Tracker Stimulus Database"
 										},
 										{
 											"_type": "LabelView",
@@ -9598,9 +9598,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 216,
+									"left": 192,
 									"top": 471,
-									"width": 200,
+									"width": 224,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFw+jRXYsejcv8="
@@ -9618,9 +9618,9 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 216,
+							"left": 192,
 							"top": 456,
-							"width": 200,
+							"width": 224,
 							"height": 120,
 							"nameCompartment": {
 								"$ref": "AAAAAAFw+jRXYsei1VA="
@@ -9718,6 +9718,707 @@
 							},
 							"propertyLabel": {
 								"$ref": "AAAAAAFw+jSi4Me/GKo="
+							}
+						},
+						{
+							"_type": "UMLPackageView",
+							"_id": "AAAAAAFw+nHgVvYjPPQ=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFw+nHgVvYkn+w=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nHgVvYjPPQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nHgVvYhYp4="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nHgVvYl5z0=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nHgVvYkn+w="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 800,
+											"top": 160,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nHgV/YmCuQ=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nHgVvYkn+w="
+											},
+											"font": "Arial;13;1",
+											"left": 493,
+											"top": 830,
+											"width": 359,
+											"height": 13,
+											"text": "Apple HealthKit API"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nHgV/YnTEs=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nHgVvYkn+w="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 800,
+											"top": 160,
+											"width": 95.36083984375,
+											"height": 13,
+											"text": "(from Packages)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nHgV/YoTVY=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nHgVvYkn+w="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 800,
+											"top": 160,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 488,
+									"top": 823,
+									"width": 369,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFw+nHgVvYl5z0="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFw+nHgV/YmCuQ="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFw+nHgV/YnTEs="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFw+nHgV/YoTVY="
+									}
+								}
+							],
+							"containedViews": [
+								{
+									"$ref": "AAAAAAFw+nUxkfaXfdU="
+								},
+								{
+									"$ref": "AAAAAAFw+niBF/a15SY="
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 488,
+							"top": 808,
+							"width": 369,
+							"height": 241,
+							"nameCompartment": {
+								"$ref": "AAAAAAFw+nHgVvYkn+w="
+							}
+						},
+						{
+							"_type": "UMLSubsystemView",
+							"_id": "AAAAAAFw+nNBlfZAyb0=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nNBlPY+Z2M="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFw+nNBlfZBNH8=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNBlfZAyb0="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNBlPY+Z2M="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nNBlfZCbnM=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nNBlfZBNH8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 48,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nNBlfZDB0c=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nNBlfZBNH8="
+											},
+											"font": "Arial;13;1",
+											"left": 605,
+											"top": 702,
+											"width": 126,
+											"height": 13,
+											"text": "Sign In With Apple"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nNBlfZEfIM=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nNBlfZBNH8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 48,
+											"width": 95.36083984375,
+											"height": 13,
+											"text": "(from Packages)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nNBlfZFXhk=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nNBlfZBNH8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 48,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 600,
+									"top": 695,
+									"width": 136,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFw+nNBlfZCbnM="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFw+nNBlfZDB0c="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFw+nNBlfZEfIM="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFw+nNBlfZFXhk="
+									}
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 600,
+							"top": 680,
+							"width": 136,
+							"height": 72,
+							"nameCompartment": {
+								"$ref": "AAAAAAFw+nNBlfZBNH8="
+							}
+						},
+						{
+							"_type": "UMLDependencyView",
+							"_id": "AAAAAAFw+nNoVvZbS8Q=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nNoVvZZhEE="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNoVvZco34=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNoVvZZhEE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 653,
+									"top": 772,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNoVvZdRJo=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNoVvZZhEE="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 638,
+									"top": 772,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNoVvZe1/E=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNoVvZZhEE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 682,
+									"top": 773,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNoVvZbS8Q="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFw+nNBlfZAyb0="
+							},
+							"tail": {
+								"$ref": "AAAAAAFw+nHgVvYjPPQ="
+							},
+							"lineStyle": 1,
+							"points": "669:807;668:752",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFw+nNoVvZco34="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFw+nNoVvZdRJo="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFw+nNoVvZe1/E="
+							}
+						},
+						{
+							"_type": "UMLDependencyView",
+							"_id": "AAAAAAFw+nNydvZsCqs=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nNydvZq7Cw="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNydvZtWsw=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNydvZq7Cw="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 682,
+									"top": 772,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNydvZubIo=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNydvZq7Cw="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 697,
+									"top": 771,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nNydvZvRXE=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nNydvZq7Cw="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 653,
+									"top": 773,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nNydvZsCqs="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFw+nHgVvYjPPQ="
+							},
+							"tail": {
+								"$ref": "AAAAAAFw+nNBlfZAyb0="
+							},
+							"lineStyle": 1,
+							"points": "668:752;669:807",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFw+nNydvZtWsw="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFw+nNydvZubIo="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFw+nNydvZvRXE="
+							}
+						},
+						{
+							"_type": "UMLDependencyView",
+							"_id": "AAAAAAFw+nOTjPZ/l9w=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nOTjPZ9/QA="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nOTjPaAlmU=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nOTjPZ9/QA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 681,
+									"top": 641,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nOTjPaBfL8=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nOTjPZ9/QA="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 696,
+									"top": 641,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFw+nOTjPaCruA=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nOTjPZ9/QA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 652,
+									"top": 642,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFw+nOTjPZ/l9w="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFw+nNBlfZAyb0="
+							},
+							"tail": {
+								"$ref": "AAAAAAFw+jKVksbh9zg="
+							},
+							"lineStyle": 1,
+							"points": "667:617;667:679",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFw+nOTjPaAlmU="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFw+nOTjPaBfL8="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFw+nOTjPaCruA="
+							}
+						},
+						{
+							"_type": "UMLModelView",
+							"_id": "AAAAAAFw+nUxkfaXfdU=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+nUxkfaVeSM="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFw+nUxkfaYSdo=",
+									"_parent": {
+										"$ref": "AAAAAAFw+nUxkfaXfdU="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+nUxkfaVeSM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nUxkfaZjjs=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nUxkfaYSdo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 712,
+											"top": 224,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nUxkfaaAX4=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nUxkfaYSdo="
+											},
+											"font": "Arial;13;1",
+											"left": 509,
+											"top": 870,
+											"width": 118,
+											"height": 13,
+											"text": "Health Data"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nUxkfabNXc=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nUxkfaYSdo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 712,
+											"top": 224,
+											"width": 152.4453125,
+											"height": 13,
+											"text": "(from Apple HealthKit API)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+nUxkfacVyU=",
+											"_parent": {
+												"$ref": "AAAAAAFw+nUxkfaYSdo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 712,
+											"top": 224,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 504,
+									"top": 863,
+									"width": 128,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFw+nUxkfaZjjs="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFw+nUxkfaaAX4="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFw+nUxkfabNXc="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFw+nUxkfacVyU="
+									}
+								}
+							],
+							"containerView": {
+								"$ref": "AAAAAAFw+nHgVvYjPPQ="
+							},
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 504,
+							"top": 848,
+							"width": 128,
+							"height": 80,
+							"nameCompartment": {
+								"$ref": "AAAAAAFw+nUxkfaYSdo="
+							}
+						},
+						{
+							"_type": "UMLModelView",
+							"_id": "AAAAAAFw+niBF/a15SY=",
+							"_parent": {
+								"$ref": "AAAAAAFw+i5lz8VzcLw="
+							},
+							"model": {
+								"$ref": "AAAAAAFw+niBF/azXD8="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFw+niBF/a2kL0=",
+									"_parent": {
+										"$ref": "AAAAAAFw+niBF/a15SY="
+									},
+									"model": {
+										"$ref": "AAAAAAFw+niBF/azXD8="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+niBF/a3pgA=",
+											"_parent": {
+												"$ref": "AAAAAAFw+niBF/a2kL0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1464,
+											"top": 216,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+niBF/a4EGw=",
+											"_parent": {
+												"$ref": "AAAAAAFw+niBF/a2kL0="
+											},
+											"font": "Arial;13;1",
+											"left": 677,
+											"top": 878,
+											"width": 119,
+											"height": 13,
+											"text": "Workout Data"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+niBF/a5YZs=",
+											"_parent": {
+												"$ref": "AAAAAAFw+niBF/a2kL0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1464,
+											"top": 216,
+											"width": 152.4453125,
+											"height": 13,
+											"text": "(from Apple HealthKit API)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFw+niBF/a6RWs=",
+											"_parent": {
+												"$ref": "AAAAAAFw+niBF/a2kL0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1464,
+											"top": 216,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 672,
+									"top": 871,
+									"width": 129,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFw+niBF/a3pgA="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFw+niBF/a4EGw="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFw+niBF/a5YZs="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFw+niBF/a6RWs="
+									}
+								}
+							],
+							"containerView": {
+								"$ref": "AAAAAAFw+nHgVvYjPPQ="
+							},
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 672,
+							"top": 856,
+							"width": 129,
+							"height": 73,
+							"nameCompartment": {
+								"$ref": "AAAAAAFw+niBF/a2kL0="
 							}
 						}
 					]
@@ -9931,6 +10632,19 @@
 							"target": {
 								"$ref": "AAAAAAFw+jRXYcefE2E="
 							}
+						},
+						{
+							"_type": "UMLDependency",
+							"_id": "AAAAAAFw+nOTjPZ9/QA=",
+							"_parent": {
+								"$ref": "AAAAAAFw+jKVksbfBZw="
+							},
+							"source": {
+								"$ref": "AAAAAAFw+jKVksbfBZw="
+							},
+							"target": {
+								"$ref": "AAAAAAFw+nNBlPY+Z2M="
+							}
 						}
 					]
 				},
@@ -9940,7 +10654,69 @@
 					"_parent": {
 						"$ref": "AAAAAAFw+ipLLMKaM8w="
 					},
-					"name": "Food_Tracker Database"
+					"name": "Food_Tracker Stimulus Database"
+				},
+				{
+					"_type": "UMLPackage",
+					"_id": "AAAAAAFw+nHgVvYhYp4=",
+					"_parent": {
+						"$ref": "AAAAAAFw+ipLLMKaM8w="
+					},
+					"name": "Apple HealthKit API",
+					"ownedElements": [
+						{
+							"_type": "UMLDependency",
+							"_id": "AAAAAAFw+nNoVvZZhEE=",
+							"_parent": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							},
+							"source": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							},
+							"target": {
+								"$ref": "AAAAAAFw+nNBlPY+Z2M="
+							}
+						},
+						{
+							"_type": "UMLModel",
+							"_id": "AAAAAAFw+nUxkfaVeSM=",
+							"_parent": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							},
+							"name": "Health Data"
+						},
+						{
+							"_type": "UMLModel",
+							"_id": "AAAAAAFw+niBF/azXD8=",
+							"_parent": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							},
+							"name": "Workout Data"
+						}
+					]
+				},
+				{
+					"_type": "UMLSubsystem",
+					"_id": "AAAAAAFw+nNBlPY+Z2M=",
+					"_parent": {
+						"$ref": "AAAAAAFw+ipLLMKaM8w="
+					},
+					"name": "Sign In With Apple",
+					"ownedElements": [
+						{
+							"_type": "UMLDependency",
+							"_id": "AAAAAAFw+nNydvZq7Cw=",
+							"_parent": {
+								"$ref": "AAAAAAFw+nNBlPY+Z2M="
+							},
+							"source": {
+								"$ref": "AAAAAAFw+nNBlPY+Z2M="
+							},
+							"target": {
+								"$ref": "AAAAAAFw+nHgVvYhYp4="
+							}
+						}
+					]
 				}
 			]
 		},
