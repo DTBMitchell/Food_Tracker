@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { Policy } from '../policy';
+import { ApiService } from '../../api.service';
+import { Policy } from '../../Models/policy';
+import { User } from '../../Models/User';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +12,19 @@ export class DashboardComponent implements OnInit {
   policies: Policy[];
   selectedPolicy: Policy = { id: null, number: null, amount: null};
 
+  users: User[];
+  selectedUser: User = { user_id: null, first_name: null, last_name: null, email: null, salt: null, password: null};
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.readPolicy().subscribe((policies: Policy[])=>{
       this.policies = policies;
       console.log(this.policies);
+    })
+      this.apiService.readUsers().subscribe((users: User[])=>{
+        this.users = users;
+        console.log(this.users);
     })
   }
 

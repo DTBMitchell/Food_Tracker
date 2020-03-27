@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { LogonComponent } from './Components/logon/logon.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    LogonComponent
   ],
   imports: [
     BrowserModule,

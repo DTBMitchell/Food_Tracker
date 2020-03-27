@@ -1,0 +1,38 @@
+<html>
+
+<h1>Login Page</h1>
+<div>
+
+  <table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>E-mail</th>
+    </tr>
+
+    <tr *ngFor="let user of users">
+      <td>{{ user.user_id }}</td>
+      <td>{{ user.first_name + ' ' + user.last_name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </table>
+
+  <br>
+  <form #f = "ngForm">
+    <table border='0' width='30%' style='border-collapse: collapse;'>
+        <tr>
+            <td><label>E-mail</label></td>
+            <td><input type="text" name="email" [(ngModel)] = "selectedUser.email"></td>
+        </tr><tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="pass" [(ngModel)] = "selectedUser.Password"></td>
+        </tr><tr>
+            <td></td>
+            <td><input type="button" (click)="Login(f)" value="Login">
+                <input type="button" (click)="Register(f)" value="Register">
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+</html>

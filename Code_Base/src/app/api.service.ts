@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Policy } from './policy';
+import { Policy } from './Models/policy';
+import { User } from './Models/User';
 import{ Observable} from 'rxjs';
 
 @Injectable({
@@ -27,4 +28,13 @@ export class ApiService {
   deletePolicy(id: number){
     return this.httpClient.delete<Policy>(`${this.PHP_API_SERVER}/api/delete.php/?id=${id}`);
   }
+
+  //Begin Non-template functions
+  readUsers(): Observable<User[]>{
+    return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/Users.php?op=all`);
+  }
+  createUser(user: User): Observable<User>{
+    return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Users.php?op=new`, user);
+  }
+
 }
