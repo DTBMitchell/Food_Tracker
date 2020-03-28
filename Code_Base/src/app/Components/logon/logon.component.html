@@ -25,11 +25,11 @@
             <td><input type="text" name="email" [(ngModel)] = "selectedUser.email"></td>
         </tr><tr>
             <td><label>Password</label></td>
-            <td><input type="password" name="pass" [(ngModel)] = "selectedUser.Password"></td>
+            <td><input type="password" name="pass" [(ngModel)] = "selectedUser.password"></td>
         </tr><tr>
             <td></td>
             <td><input type="button" (click)="Login(f)" value="Login">
-                <input type="button" (click)="Register(f)" value="Register">
+                <input type="button" routerLink="/register" value="Register">
             </td>
         </tr>
     </table>

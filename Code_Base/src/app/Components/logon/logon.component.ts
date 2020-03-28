@@ -30,6 +30,6 @@ export class LogonComponent implements OnInit {
     * Variables
   */
   users: User[];
-  selectedUser: User = new User;
+  selectedUser: User = new User();
 
 }
