@@ -33,8 +33,17 @@ export class ApiService {
   readUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/Users.php?op=all`);
   }
+  readUserPublicSalt(email: string): Observable<string[]>{
+    return this.httpClient.get<string[]>(`${this.PHP_API_SERVER}/api/Users.php?op=salt&email=${email}`);
+  }
+
   createUser(user: User): Observable<User>{
     return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Users.php?op=new`, user);
   }
+
+  readLogin(user: User): Observable<User>{
+    return;
+  }
+  
 
 }

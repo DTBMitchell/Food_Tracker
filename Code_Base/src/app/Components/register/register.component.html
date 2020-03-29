@@ -1,31 +1,40 @@
 <h1>Register</h1>
+<form #f = "ngForm">
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" name="first_name" ></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" name="last_name" ></td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td><input type="text" name="email" ></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="pass" ></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="password" name="pass_conf" ></td>
+        </tr>
+        <tr>
+            <td>Birthday</td>
+            <td><input type="date" name="birthday" ></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" (click)="Register(f)" value="Register!"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a routerLink="/logon">Already have an account?</a></td>
+        </tr>
+        
 
-<table>
-    <tr>
-        <td>First Name</td>
-        <td><input type="text" name="first_name" ></td>
-    </tr>
-    <tr>
-        <td>Last Name</td>
-        <td><input type="text" name="last_name" ></td>
-    </tr>
-    <tr>
-        <td>Email Address</td>
-        <td><input type="text" name="email" ></td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td><input type="password" name="pass" ></td>
-    </tr>
-    <tr>
-        <td>Confirm Password</td>
-        <td><input type="password" name="pass_conf" ></td>
-    </tr>
-    <tr>
-        <td>Birthday</td>
-        <td><input type="date" name="birthday" ></td>
-    </tr>
-    
 
-
-</table>
+    </table>
+</form>

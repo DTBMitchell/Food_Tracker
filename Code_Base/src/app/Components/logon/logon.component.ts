@@ -20,10 +20,8 @@ export class LogonComponent implements OnInit {
   }
 
   Login(form){
-    this.apiService.createUser(form.value).subscribe((user: User)=>{
-      console.log("User created, ", user);
-    console.log('Working!');
-    });
+    //Fetch the user's public salt to not transmit password in plain text
+    console.log("Weeeeeeeee");
   }
 
   /*
@@ -31,5 +29,4 @@ export class LogonComponent implements OnInit {
   */
   users: User[];
   selectedUser: User = new User();
-
 }
