@@ -22,10 +22,10 @@
     <table border='0' width='30%' style='border-collapse: collapse;'>
         <tr>
             <td><label>E-mail</label></td>
-            <td><input type="text" name="email" [(ngModel)] = "selectedUser.email"></td>
+            <td><input type="text" name="email" [(ngModel)] = "user.email"></td>
         </tr><tr>
             <td><label>Password</label></td>
-            <td><input type="password" name="pass" [(ngModel)] = "selectedUser.password"></td>
+            <td><input type="password" name="password" [(ngModel)] = "user.password"></td>
         </tr><tr>
             <td></td>
             <td><input type="button" (click)="Login(f)" value="Login">

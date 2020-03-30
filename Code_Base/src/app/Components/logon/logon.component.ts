@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { User } from '../../Models/User';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-logon',
@@ -20,13 +21,22 @@ export class LogonComponent implements OnInit {
   }
 
   Login(form){
-    //Fetch the user's public salt to not transmit password in plain text
-    console.log("Weeeeeeeee");
+    this.user.user_id=null;
+    this.user.email = form.value.email;
+    this.user.password = form.value.password;
+
+    //send to database
+    this.apiService.login(this.user);
+      console.log(localStorage.getItem('id_token'));
+      console.log(localStorage.getItem('expires_at'));
   }
+
+  
 
   /*
     * Variables
   */
   users: User[];
-  selectedUser: User = new User();
+  user: User = new User();
+  jwt: JwtModule;
 }
