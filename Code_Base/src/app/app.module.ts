@@ -7,13 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogonComponent } from './Components/logon/logon.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { HomeComponent } from './Components/home/home.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LogonComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { RegisterComponent } from './Components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    JwtModule
+    JwtModule,
+    BsDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
