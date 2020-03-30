@@ -1,40 +1,63 @@
 <h1>Register</h1>
-<form #f = "ngForm">
+<form [formGroup] = "registrationForm" (ngSubmit)="registerNewUser()">
     <table>
         <tr>
-            <td>First Name</td>
-            <td><input type="text" name="first_name" ></td>
+            <td><label>First Name</label></td>
+            <td><input type="text" formControlName="first_name" required></td>
         </tr>
         <tr>
-            <td>Last Name</td>
-            <td><input type="text" name="last_name" ></td>
+            <td><label>Last Name</label></td>
+            <td><input type="text" formControlName="last_name" required></td>
         </tr>
         <tr>
-            <td>Email Address</td>
-            <td><input type="text" name="email" ></td>
+            <td><label>Email Address</label></td>
+            <td><input type="text" formControlName="email" required></td>
         </tr>
         <tr>
-            <td>Password</td>
-            <td><input type="password" name="pass" ></td>
+            <td><label>Password</label></td>
+            <td><input type="password" formControlName="password" required></td>
         </tr>
         <tr>
-            <td>Confirm Password</td>
-            <td><input type="password" name="pass_conf" ></td>
+            <td><label>Confirm Password</label></td>
+            <td><input type="password" ></td>
         </tr>
         <tr>
-            <td>Birthday</td>
-            <td><input type="date" name="birthday" ></td>
+            <td><label>Birthday</label></td>
+            <td><input type="date" formControlName="birthday" required></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="button" (click)="Register(f)" value="Register!"></td>
+            <td><input type="button" (click)="registerNewUser()" value="Register!"></td>
         </tr>
         <tr>
             <td></td>
             <td><a routerLink="/logon">Already have an account?</a></td>
         </tr>
-        
-
-
     </table>
 </form>
+<br>
+<!--
+<form #f = "ngForm">
+    <label>First Name</label>
+    <input type="text" formControlName="first_name" >
+    <br>
+    <label>Last Name</label>
+    <input type="text" formControlName="last_name" >
+    <br>
+    <label>Email Address</label>
+    <input type="text" formControlName="email" >
+    <br>
+    <label>Password</label>
+    <input type="password" formControlName="password" >
+    <br>
+    <label>Confirm Password</label>
+    <input type="password" formControlName="password_conf" >
+    <br>
+    <label>Birthday</label>
+    <input type="date" formControlName="birthday" >
+    <br>
+    <input type="button" (click)="registerNewUser(f)" value="Register!">
+    <br>
+    <a routerLink="/logon">Already have an account?</a>
+    </form>
+-->

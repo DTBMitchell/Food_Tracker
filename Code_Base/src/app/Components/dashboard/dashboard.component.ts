@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   selectedPolicy: Policy = { id: null, number: null, amount: null};
 
   users: User[];
-  selectedUser: User = { user_id: null, first_name: null, last_name: null, email: null, salt: null, password: null};
+  selectedUser: User = new User();
 
   constructor(private apiService: ApiService) { }
 
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
       });
     }
     else{
-
+      console.log("Sent Data: ", form.value)
       this.apiService.createPolicy(form.value).subscribe((policy: Policy)=>{
         console.log("Policy created, ", policy);
       });

@@ -3,9 +3,9 @@ export class User{
     first_name: string;
     last_name: string;
     email: string;
+    birthday: Date;
 
     password: string;
-    salt: string;
 
     constructor(){
         this.user_id = null;
@@ -13,6 +13,6 @@ export class User{
         this.last_name = null;
         this.email = null;
         this.password = null;
-        this.salt = null;
+        this.birthday =null;
     }
 }
