@@ -16,18 +16,15 @@ export class ApiService {
 
   //Begin Non-template functions
   readUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/Users.php?op=all`);
-  }
-  readUserPublicSalt(email: string): Observable<string[]>{
-    return this.httpClient.get<string[]>(`${this.PHP_API_SERVER}/api/Users.php?op=salt&email=${email}`);
+    return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/Auth.php?op=all`);
   }
 
   createUser(user: User): Observable<User>{
-    return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Users.php?op=new`, user);
+    return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Auth.php?op=new`, user);
   }
 
   login(user: User){
-    return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Users.php?op=login`, user).subscribe((user: User)=>{
+    return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Auth.php?op=login`, user).subscribe((user: User)=>{
       this.setSession(user);
     });
   }

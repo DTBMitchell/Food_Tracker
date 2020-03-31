@@ -41,7 +41,10 @@ export class RegisterComponent implements OnInit {
       //send to database
       //console.log(this.user);
       this.apiService.createUser(this.user).subscribe((userReturn: User)=>{
-        console.log(userReturn);
+        userReturn.password = this.user.password;
+        this.apiService.login(userReturn);
+        console.log(localStorage.getItem('id_token'));
+        console.log(localStorage.getItem('expires_at'));
       });
     }
 
