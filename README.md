@@ -10,3 +10,12 @@ Daily input of the user’s eating behaviors as well as stimulus they encounter.
 This application should allow users to track their diet in its entirety while also tracking any stimulus they share. Over time, the application should show users a correlation between stimulus and intake. 
 The app will NOT be able to demonstrate causation, but will point out correlations. This will allow the user to determine if the stimulus are causing the reaction or if it is merely correlated.
 
+
+### Credits
+In case I forget to put them into the HTML, here are any credits for assets i might have used:
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+
+Icons made by <a href="https://www.flaticon.com/authors/elias-bikbulatov" title="Elias Bikbulatov">Elias Bikbulatov</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

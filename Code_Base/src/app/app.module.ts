@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { LogonComponent } from './Components/logon/logon.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { HomeComponent } from './Components/home/home.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { LogoutComponent } from './Components/logout/logout.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 
 @NgModule({
@@ -16,7 +18,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AppComponent,
     LogonComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    LogoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +29,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    JwtModule,
-    BsDropdownModule
+    JwtModule
+    //BsDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
