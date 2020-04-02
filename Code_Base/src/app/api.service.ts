@@ -32,6 +32,12 @@ export class ApiService {
   }
 
   logout() {
+    var token = {
+      id_token: localStorage.getItem('id_token')
+    }
+    this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/Auth.php?op=logout`, token).subscribe((token) =>{
+      console.log(token);
+    });
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
   }

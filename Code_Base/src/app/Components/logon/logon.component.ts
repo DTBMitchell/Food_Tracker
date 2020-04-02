@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { User } from '../../Models/User';
+//import { RegisterComponent } from '../register/register.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-logon',
@@ -11,14 +14,18 @@ import { Router } from '@angular/router';
 })
 export class LogonComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(
+    private apiService: ApiService, 
+    private router: Router
+    //public matDialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     //Gets all users. Testing purposes only
     this.apiService.readUsers().subscribe((users: User[])=>{
       this.users = users;
       console.log(this.users);
-  })
+    })
   }
 
   Login(form){
@@ -31,8 +38,8 @@ export class LogonComponent implements OnInit {
       this.apiService.login(this.user).subscribe((user: User)=>{
         this.apiService.setSession(user)
         if(this.apiService.isLoggedIn){
-          //console.log(localStorage.getItem('id_token'));
-          //console.log(localStorage.getItem('expires_at'));
+          console.log(localStorage.getItem('id_token'));
+          console.log(localStorage.getItem('expires_at'));
 
           console.log('Redirecting...')
           this.router.navigateByUrl('dashboard');

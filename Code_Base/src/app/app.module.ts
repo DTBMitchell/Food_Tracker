@@ -32,7 +32,9 @@ import { HeaderComponent } from './Components/header/header.component';
     JwtModule
     //BsDropdownModule
   ],
-  providers: [],
+  providers: [
+    //{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

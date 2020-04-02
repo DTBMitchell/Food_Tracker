@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { User } from '../../Models/User';
@@ -20,7 +21,11 @@ export class RegisterComponent implements OnInit {
 
   //registrationForm = new FormControl('');
 
-  constructor(private apiService: ApiService, private fb: FormBuilder, private router: Router) { }
+  constructor(
+    private apiService: ApiService, 
+    private fb: FormBuilder, private router: Router,
+    public ref: MatDialogRef<RegisterComponent>
+    ) { }
 
   ngOnInit(): void {
     this.registrationForm = new FormGroup({
@@ -43,7 +48,10 @@ export class RegisterComponent implements OnInit {
         Validators.required
       ])
     });
-    
+  }
+
+  closeDialog() {
+    this.ref.close('Pizza!');
   }
 
   registerNewUser(){
