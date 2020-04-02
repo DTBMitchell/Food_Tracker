@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ApiService } from '../../api.service';
+import { AuthApiService } from '../../authApi.service';
 import { User } from '../../Models/User';
 
 @Component({
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   //registrationForm = new FormControl('');
 
   constructor(
-    private apiService: ApiService, 
+    private apiService: AuthApiService, 
     private fb: FormBuilder, private router: Router,
     public ref: MatDialogRef<RegisterComponent>
     ) { }

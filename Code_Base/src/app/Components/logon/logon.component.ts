@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../../api.service';
+import { AuthApiService } from '../../authApi.service';
 import { User } from '../../Models/User';
 //import { RegisterComponent } from '../register/register.component';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -15,7 +15,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 export class LogonComponent implements OnInit {
 
   constructor(
-    private apiService: ApiService, 
+    private apiService: AuthApiService, 
     private router: Router
     //public matDialog: MatDialog
     ) { }

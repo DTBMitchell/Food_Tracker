@@ -7,7 +7,7 @@ import{ Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class AuthApiService {
 
   PHP_API_SERVER = "http://localhost:80";
 

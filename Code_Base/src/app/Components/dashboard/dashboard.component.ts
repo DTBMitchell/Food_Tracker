@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { AuthApiService } from '../../authApi.service';
 import { Router } from '@angular/router';
 
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: AuthApiService, private router: Router) { }
 
   ngOnInit(): void {
     if(!this.apiService.isLoggedIn()){

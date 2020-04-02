@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { AuthApiService } from '../../authApi.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: AuthApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.apiService.logout();
