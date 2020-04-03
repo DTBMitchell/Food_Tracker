@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthApiService } from '../../authApi.service';
 import { User } from '../../Models/User';
+import { FoodApiServiceService } from 'src/app/food-api-service.service';
 
 @Component({
   selector: 'app-register',
@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private apiService: AuthApiService, 
-    private fb: FormBuilder, private router: Router,
-    public ref: MatDialogRef<RegisterComponent>
+    private foodApiService: FoodApiServiceService,
+    private fb: FormBuilder, private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -50,10 +50,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  closeDialog() {
-    this.ref.close('Pizza!');
-  }
-
   registerNewUser(){
     //check form validation!
     if(this.registrationForm.valid && (this.registrationForm.value.password === this.registrationForm.value.password_conf)){
@@ -63,21 +59,33 @@ export class RegisterComponent implements OnInit {
       this.user.last_name = this.registrationForm.value.last_name;
       this.user.email = this.registrationForm.value.email;
       this.user.password = this.registrationForm.value.password;
-      this.user.birthday = null;
       
 
       //send to database
-      //console.log(this.user);
-      this.apiService.createUser(this.user).subscribe((userReturn: User)=>{
+      console.log(this.user);
+      this.apiService.createUser(this.user).subscribe((userReturn)=>{
+
         console.log(userReturn);
         userReturn.password = this.user.password;
-        this.apiService.login(userReturn).subscribe((loginUser) =>{
-          this.apiService.setSession(loginUser)
-          if(this.apiService.isLoggedIn){
-            //console.log(localStorage.getItem('id_token'));
-            //console.log(localStorage.getItem('expires_at'));
 
-            console.log('Redirecting...')
+        this.apiService.login(userReturn).subscribe((loginUser) =>{
+
+          this.apiService.setSession(loginUser);
+
+          
+
+          if(this.apiService.isLoggedIn){
+            console.log(localStorage.getItem('id_token'));
+            //console.log(localStorage.getItem('expires_at'));
+            var token = {
+              id_token: localStorage.getItem('id_token')
+            };
+            this.foodApiService.createUser(token).subscribe((st) =>{
+              console.log(st);
+            });
+            
+
+            console.log('Redirecting...');
             this.router.navigateByUrl('dashboard');
           }else{
             

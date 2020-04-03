@@ -13,7 +13,6 @@ export class AuthApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //Begin Non-template functions
   readUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/Auth.php?op=all`);
   }
@@ -27,6 +26,7 @@ export class AuthApiService {
   }
 
   setSession(userResult) {
+    console.log(userResult.idToken);
     localStorage.setItem('id_token', userResult.idToken);
     localStorage.setItem("expires_at", userResult.expires_at);
   }
