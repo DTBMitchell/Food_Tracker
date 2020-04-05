@@ -1,6 +1,6 @@
 <?php 
 
-    require 'AuthDatabase.php';
+    require 'PavDatabase.php';
     require 'JWT.php';
 
     if($_GET != null){
@@ -18,9 +18,9 @@
         $request = json_decode($postdata);
     }else if($operation='all'){}
     else{
-        http_response_code(404);
+        http_response_code(403);
         error_reporting(E_ALL ^ E_NOTICE);  
-        echo 'Page Not Found';
+        echo 'Page Forbidden';
     }
 
     switch($operation){
@@ -57,15 +57,20 @@
     function insertNewGoal($request){
         $trackerID = getTrackerID($request);
             
-        $sql = "INSERT INTO `weight_goals` (`goal_id`, `tracker_id`, `goal_weight`, `date_set`) VALUES (NULL, {$trackerID}, '167.5', CURRENT_TIMESTAMP); ";
+        $sql = "INSERT INTO `weight_goals` (`goal_id`, `tracker_id`, `goal_weight`, `date_set`) VALUES (NULL, '{$trackerID}', '{$request->goal_weight}', CURRENT_TIMESTAMP); ";
         
         if($result = mysqli_query(connect(), $sql)){
+            $row = queryLatestUserGoal($trackerID);
             echo json_encode([
-                'Results:' => 'Success'
+                'goal_id' => $row['goal_id'],
+                'goal_weight' => $row['goal_weight'],
+                'date_set' => $row['date_set']
             ]);
         }else{
             echo json_encode([
-                'Results:' => 'Failure'
+                'Results:' => 'Failure',
+                'tracker_id' => $trackerID,
+                'goal_weight' => $request->goal_weight
             ]);
         }
     }
@@ -73,11 +78,12 @@
     function getUserGoals($request){
         $trackerID = getTrackerID($request);
         $goals = [];
-        $sql = "SELECT `goal_weight`, `date_set` FROM `weight_goals` WHERE `tracker_id` = {$trackerID}";
+        $sql = "SELECT `goal_id`, `goal_weight`, `date_set` FROM `weight_goals` WHERE `tracker_id` = '{$trackerID}' ORDER BY `date_set` DESC";
 
-        if($result = mysqli_query(connectAuth(), $sql)){
+        if($result = mysqli_query(connect(), $sql)){
             $i=0;
             while($row = mysqli_fetch_assoc($result)){
+                $goals[$i]['goal_id'] = $row['goal_id'];
                 $goals[$i]['goal_weight'] = $row['goal_weight'];
                 $goals[$i]['date_set'] = $row['date_set'];              
 
@@ -92,14 +98,23 @@
 
     function getLatestUserGoal($request){
         $trackerID = getTrackerID($request);
-        $sql = "SELECT `goal_weight`, `date_set` FROM `weight_goals` WHERE `tracker_id` = {$trackerID} ORDER BY `date_set` DESC LIMIT 1";
 
-        if($result = mysqli_query(connectAuth(), $sql)){
-            $row = mysqli_fetch_assoc($result);
-            echo json_encode(array(
-                'goal_weight' => $row['goal_weight'],
-                'date_set' => $row['date_set']
-            ));
+        $row = queryLatestUserGoal($trackerID);
+
+        echo json_encode(array(
+            'goal_id' => $row['goal_id'],
+            'goal_weight' => $row['goal_weight'],
+            'date_set' => $row['date_set']
+        ));
+        
+    }
+
+    function queryLatestUserGoal($trackerID){
+        $sql = "SELECT * FROM `weight_goals` WHERE `tracker_id` = '{$trackerID}' ORDER BY `date_set` DESC LIMIT 1";
+
+        if($result = mysqli_query(connect(), $sql)){
+            return mysqli_fetch_assoc($result);
+            
 
         }else{
             echo json_encode([
@@ -114,12 +129,16 @@
     function insertNewWeight($request){
         $trackerID = getTrackerID($request);
             
-        $sql = "INSERT INTO `weight_diary` (`diary_id`, `tracker_id`, `weight`, `date`) VALUES (NULL, {$trackerID}, '167.9', CURRENT_TIMESTAMP);";
+        $sql = "INSERT INTO `weight_diary` (`diary_id`, `tracker_id`, `weight`, `date`) VALUES (NULL, '{$trackerID}', '{$request->weight_entry->weight}', '{$request->weight_entry->date}');";
         
         if($result = mysqli_query(connect(), $sql)){
-            echo json_encode([
-                'Results:' => 'Success'
-            ]);
+            $row = queryLatestUserWeight($trackerID);
+
+            echo json_encode(array(
+                'diary_id' => $row['diary_id'],
+                'weight' => $row['weight'],
+                'date' => $row['date']
+            ));
         }else{
             echo json_encode([
                 'Results:' => 'Failure'
@@ -129,19 +148,20 @@
 
     function getUserWeights($request){
         $trackerID = getTrackerID($request);
-        $goals = [];
-        $sql = "SELECT `weight`, `date` FROM `weight_diary` WHERE `tracker_id` = {$trackerID}";
+        $weights = [];
+        $sql = "SELECT * FROM `weight_diary` WHERE `tracker_id` = '{$trackerID}' ORDER BY `date` DESC";
 
-        if($result = mysqli_query(connectAuth(), $sql)){
+        if($result = mysqli_query(connect(), $sql)){
             $i=0;
             while($row = mysqli_fetch_assoc($result)){
-                $goals[$i]['weight'] = $row['weight'];
-                $goals[$i]['date'] = $row['date'];              
+                $weights[$i]['diary_id'] = $row['diary_id'];
+                $weights[$i]['weight'] = $row['weight'];
+                $weights[$i]['date'] = $row['date'];              
 
                 $i++;
             }
 
-            echo json_encode($goals);
+            echo json_encode($weights);
         }else{
             http_response_code(404);
         }
@@ -149,14 +169,22 @@
 
     function getLatestUserWeight($request){
         $trackerID = getTrackerID($request);
-        $sql = "SELECT `weight`, `date` FROM `weight_diary` WHERE `tracker_id` = {$trackerID} ORDER BY `date` DESC LIMIT 1";
 
-        if($result = mysqli_query(connectAuth(), $sql)){
-            $row = mysqli_fetch_assoc($result);
-            echo json_encode(array(
-                'weight' => $row['weight'],
-                'date' => $row['date']
-            ));
+        $row = queryLatestUserGoal($trackerID);
+
+        echo json_encode(array(
+            'weight' => $row['weight'],
+            'date' => $row['date']
+        ));
+        
+    }
+
+    function queryLatestUserWeight($trackerID){
+        $sql = "SELECT * FROM `weight_diary` WHERE `tracker_id` = '{$trackerID}' ORDER BY `date` DESC LIMIT 1";
+
+        if($result = mysqli_query(connect(), $sql)){
+            return mysqli_fetch_assoc($result);
+            
 
         }else{
             echo json_encode([

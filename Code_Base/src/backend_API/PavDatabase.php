@@ -60,12 +60,12 @@
     }
 
     function decodeID($req){
-        return (JWT::decode($req->id_token, fetchServerKey()))->id;
+        return (JWT::decode($req->id_token, fetchServerKey())->id);
     }
 
     function getTrackerID($request){
         $id = decodeID($request);
-        $sql = "SELECT `tracker_id` FROM `auth_connector` WHERE `auth_connector`.`auth_id` = {$id}";
+        $sql = "SELECT `tracker_id` FROM `auth_connector` WHERE `auth_connector`.`auth_id` = '{$id}'";
 
         if($result = mysqli_query(connect(), $sql)){
             return mysqli_fetch_assoc($result)['tracker_id'];
