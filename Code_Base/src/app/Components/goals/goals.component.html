@@ -1,0 +1,39 @@
+<h1>Your Goals</h1>
+<h3> Current Goals</h3>
+<table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>Goal ID</th>
+      <th>Goal Weight</th>
+      <th>Date Set</th>
+    </tr>
+
+    <tr *ngFor="let goal of goals">
+      <td>{{ goal.goal_id }}</td>
+      <td>{{ goal.goal_weight }}</td>
+      <td>{{ goal.date_set }}</td>
+    </tr>
+  </table>
+
+<br>
+<h3>New Goals</h3>
+<form [formGroup] = "goalForm" (ngSubmit)="submitGoal()">
+    <table border='0' width='35%' style='border-collapse: collapse; margin-left: 5%;'>
+        <tr>
+            <td><label>New Goal Weight</label></td>
+        </tr><tr>
+            <td><input [class.is-invalid] ="goalForm.get('newGoal').invalid && goalForm.get('newGoal').touched" type="text" id="newGoal" class="form-control" formControlName="newGoal" required></td>
+            <td>
+                <div *ngIf="newGoal.invalid && (newGoal.dirty)" class="text-danger">
+                </div>
+                <div *ngIf="newGoal.invalid && (newGoal.dirty)" class="text-danger">
+                    <div *ngIf="newGoal.errors.min || newGoal.errors.max">
+                        Please input a between 40 & 1000
+                    </div>
+                </div>
+            </td>
+        </tr><tr>
+            <td><input type="button" (click)="submitGoal()" [disabled]="!this.goalForm.valid"
+                value="Submit" class=""></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,45 @@
+<h1>Your Goals</h1>
+<h3> Current Goals</h3>
+<table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>Diary ID</th>
+      <th>Weight</th>
+      <th>Date Weightd</th>
+    </tr>
+
+    <tr *ngFor="let weight of weights">
+      <td>{{ weight.diary_id }}</td>
+      <td>{{ weight.weight }}</td>
+      <td>{{ weight.date }}</td>
+    </tr>
+  </table>
+
+<br>
+<h3>New Goals</h3>
+<form [formGroup] = "weightForm" (ngSubmit)="submitEntry()">
+    <table border='0' width='35%' style='border-collapse: collapse; margin-left: 5%;'>
+        <tr>
+            <td><label>New Weight Entry</label></td>
+        </tr><tr>
+            <td><input [class.is-invalid] ="weightForm.get('newWeight').invalid && weightForm.get('newWeight').touched" type="text" id="newWeight" class="form-control" formControlName="newWeight" required></td>
+            <td>
+                <div *ngIf="newWeight.invalid && (newWeight.dirty)" class="text-danger">
+                </div>
+                <div *ngIf="newWeight.invalid && (newWeight.dirty)" class="text-danger">
+                    <div *ngIf="newWeight.errors.min || newWeight.errors.max">
+                        Please input a between 40 & 1000
+                    </div>
+                </div>
+            </td>
+        </tr><tr>
+            <td><label>Date Weighed</label></td>
+        </tr><tr>
+            <td><input type="date" id="newDate" class="form-control" formControlName="newDate" required></td>
+            <td>
+            </td>
+        </tr><tr>
+            <td><input type="button" (click)="submitEntry()"
+                value="Submit" class=""></td>
+        </tr>
+    </table>
+</form>

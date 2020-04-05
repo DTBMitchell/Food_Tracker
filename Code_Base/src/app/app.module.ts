@@ -11,6 +11,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { GoalsComponent } from './Components/goals/goals.component';
+import { WeightsComponent } from './Components/weights/weights.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HeaderComponent } from './Components/header/header.component';
     HomeComponent,
     DashboardComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    GoalsComponent,
+    WeightsComponent
   ],
   imports: [
     BrowserModule,

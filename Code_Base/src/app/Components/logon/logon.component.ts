@@ -24,7 +24,7 @@ export class LogonComponent implements OnInit {
     //Gets all users. Testing purposes only
     this.apiService.readUsers().subscribe((users: User[])=>{
       this.users = users;
-      console.log(this.users);
+      //console.log(this.users);
     })
   }
 
@@ -50,6 +50,7 @@ export class LogonComponent implements OnInit {
     }
   }
 
+  ///TODO: Form Validation
   isValid(): Boolean{
     return true;
   }
@@ -59,5 +60,5 @@ export class LogonComponent implements OnInit {
   */
   users: User[];
   user: User = new User();
-  jwt: JwtModule;
+  //jwt: JwtModule;
 }

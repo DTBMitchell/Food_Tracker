@@ -15,7 +15,9 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" ><a class="nav-link" routerLink="" >Home</a></li>
+                <li class="nav-item active" ><a class="nav-link" routerLink="" >Home</a></li>
+                <li *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/weights">Weight Diary</a></li>
+                <li *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/goals">Goals</a></li>
             </ul>
 
             <a class="navbar-brand nav-link float-left" style="margin:0px;" routerLink="/dashboard">

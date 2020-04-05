@@ -26,7 +26,7 @@ export class AuthApiService {
   }
 
   setSession(userResult) {
-    console.log(userResult.idToken);
+    //console.log(userResult.idToken);
     localStorage.setItem('id_token', userResult.idToken);
     localStorage.setItem("expires_at", userResult.expires_at);
   }

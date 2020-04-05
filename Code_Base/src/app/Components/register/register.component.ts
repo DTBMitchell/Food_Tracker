@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
   registerNewUser(){
     //check form validation!
     if(this.registrationForm.valid && (this.registrationForm.value.password === this.registrationForm.value.password_conf)){
-      console.log("form validated!")
+      //console.log("form validated!")
       this.user.user_id=null;
       this.user.first_name = this.registrationForm.value.first_name;      
       this.user.last_name = this.registrationForm.value.last_name;
@@ -62,10 +62,10 @@ export class RegisterComponent implements OnInit {
       
 
       //send to database
-      console.log(this.user);
+      //console.log(this.user);
       this.apiService.createUser(this.user).subscribe((userReturn)=>{
 
-        console.log(userReturn);
+        //console.log(userReturn);
         userReturn.password = this.user.password;
 
         this.apiService.login(userReturn).subscribe((loginUser) =>{
@@ -76,7 +76,6 @@ export class RegisterComponent implements OnInit {
 
           if(this.apiService.isLoggedIn){
             console.log(localStorage.getItem('id_token'));
-            //console.log(localStorage.getItem('expires_at'));
             var token = {
               id_token: localStorage.getItem('id_token')
             };
