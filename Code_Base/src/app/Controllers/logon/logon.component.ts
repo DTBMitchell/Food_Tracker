@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthApiService } from '../../authApi.service';
-import { User } from '../../Models/User';
-//import { RegisterComponent } from '../register/register.component';
-import { JwtModule } from '@auth0/angular-jwt';
+import { AuthApiService } from 'src/app/authApi.service';
+import { User } from 'src/app/Models/User';
 
 
 
 @Component({
   selector: 'app-logon',
-  templateUrl: './logon.component.html',
-  styleUrls: ['./logon.component.css']
+  templateUrl: '../../views/logon/logon.component.html',
+  styleUrls: ['../../views/logon/logon.component.css']
 })
 export class LogonComponent implements OnInit {
 

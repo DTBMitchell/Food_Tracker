@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LogonComponent } from './Components/logon/logon.component';
-import { RegisterComponent } from './Components/register/register.component';
-import { HomeComponent } from './Components/home/home.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { LogoutComponent } from './Components/logout/logout.component';
-import { HeaderComponent } from './Components/header/header.component';
-import { GoalsComponent } from './Components/goals/goals.component';
-import { WeightsComponent } from './Components/weights/weights.component';
+import { LogonComponent } from './Controllers/logon/logon.component';
+import { RegisterComponent } from './Controllers/register/register.component';
+import { HomeComponent } from './Controllers/home/home.component';
+import { DashboardComponent } from './Controllers/dashboard_components/dashboard/dashboard.component';
+import { LogoutComponent } from './Controllers/logout/logout.component';
+import { HeaderComponent } from './Controllers/header/header.component';
+import { GoalsComponent } from './Controllers/dashboard_components/goals/goals.component';
+import { WeightsComponent } from './Controllers/dashboard_components/weights/weights.component';
 
 
 @NgModule({

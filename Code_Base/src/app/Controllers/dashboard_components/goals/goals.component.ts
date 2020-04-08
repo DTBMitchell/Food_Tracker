@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
-import { AuthApiService } from 'src/app/authApi.service';
 import { FoodApiServiceService } from 'src/app/food-api-service.service';
-import { Goal } from '../../Models/goal'
+import { Goal } from 'src/app/Models/goal'
 
 @Component({
   selector: 'app-goals',
-  templateUrl: './goals.component.html',
-  styleUrls: ['./goals.component.css']
+  templateUrl: '../../../views/dashboard_components/goals/goals.component.html',
+  styleUrls: ['../../../views/dashboard_components/goals/goals.component.css']
 })
 export class GoalsComponent implements OnInit {
 

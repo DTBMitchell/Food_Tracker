@@ -3,8 +3,8 @@ import { AuthApiService } from 'src/app/authApi.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: '../../views/header/header.component.html',
+  styleUrls: ['../../views/header/header.component.css']
 })
 export class HeaderComponent implements OnInit {
 

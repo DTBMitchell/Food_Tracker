@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthApiService } from '../../authApi.service';
-import { User } from '../../Models/User';
+import { AuthApiService } from 'src/app/authApi.service';
+import { User } from 'src/app/Models/User';
 import { FoodApiServiceService } from 'src/app/food-api-service.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: '../../views/register/register.component.html',
+  styleUrls: ['../../views/register/register.component.css']
 })
 export class RegisterComponent implements OnInit {
   registrationForm= this.fb.group({

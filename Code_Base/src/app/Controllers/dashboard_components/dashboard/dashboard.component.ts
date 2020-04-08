@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthApiService } from '../../authApi.service';
+import { AuthApiService } from 'src/app/authApi.service';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  templateUrl: '../../../views/dashboard_components/dashboard/dashboard.component.html',
+  styleUrls: ['../../../views/dashboard_components/dashboard/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 

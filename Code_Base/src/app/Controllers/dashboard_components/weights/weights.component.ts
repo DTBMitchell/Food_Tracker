@@ -5,8 +5,8 @@ import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, Valid
 
 @Component({
   selector: 'app-weights',
-  templateUrl: './weights.component.html',
-  styleUrls: ['./weights.component.css']
+  templateUrl: '../../../views/dashboard_components/weights/weights.component.html',
+  styleUrls: ['../../../views/dashboard_components/weights/weights.component.css']
 })
 export class WeightsComponent implements OnInit {
 
