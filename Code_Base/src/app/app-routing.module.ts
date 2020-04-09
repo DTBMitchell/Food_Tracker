@@ -7,6 +7,7 @@ import { DashboardComponent } from './Controllers/dashboard_components/dashboard
 import { LogoutComponent } from './Controllers/logout/logout.component';
 import { GoalsComponent } from './Controllers/dashboard_components/goals/goals.component';
 import { WeightsComponent } from './Controllers/dashboard_components/weights/weights.component';
+import { DashboardHomeComponent } from './Controllers/dashboard_components/dashboard-home/dashboard-home.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,12 @@ const routes: Routes = [
   {path: 'dashboard', 
   component: DashboardComponent,
   children:[
+    {path: 'home', component:DashboardHomeComponent},
     {path: 'weights', component:WeightsComponent},
-    {path: 'goals', component: GoalsComponent}
+    {path: 'goals', component: GoalsComponent},
+
+
+    {path: '**', component:DashboardHomeComponent}
   ]},
 
   {path: '**', component:HomeComponent}
