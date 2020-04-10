@@ -1,1 +1,4 @@
-<p>dashboard-home works!</p>
+<div *ngIf="chart">
+    <h3>Weight Log</h3>
+    <canvas id="canvas">{{ chart }}</canvas>
+</div>

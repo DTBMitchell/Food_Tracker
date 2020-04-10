@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Weight } from 'src/app/Models/weight';
 import { FoodApiServiceService } from 'src/app/food-api-service.service';
-import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn, ControlContainer } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-weights',
@@ -10,6 +11,8 @@ import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, Valid
 })
 export class WeightsComponent implements OnInit {
 
+  
+
   constructor(
     private foodApiService: FoodApiServiceService,
     private fb: FormBuilder
@@ -17,7 +20,24 @@ export class WeightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.foodApiService.readAllUserWeights().subscribe((weights: Weight[]) => {
+      let dates = [];
+      let weightInputs: number[] = [];
+
+      //Format dates and push onto arrays
+      weights.forEach(weight => {
+        //Create new Date objects for table
+        weight.date = new Date(weight.date);
+
+        //Create seperate Date objects for chart
+        dates.push(new Date(weight.date).toLocaleDateString('en', {year: 'numeric', month: 'short', day: 'numeric'}));
+        weightInputs.push(weight.weight)
+      });
+
+      //Send data to table
       this.weights=weights;
+
+      //Send data to chart
+      this.buildChart(dates, weightInputs);
     });
 
     this.weightForm = new FormGroup({
@@ -30,7 +50,38 @@ export class WeightsComponent implements OnInit {
         //Validators.required
       ])
     });
+  }
 
+  //Builds chart data to send to view
+  buildChart(dates =[], weightInputs = []){
+    //console.log(dates,weightInputs)
+    this.chart.push(new Chart('canvas',{
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets:[
+          {
+            data: weightInputs,
+            borderColor: 'blue',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+          scales: {
+            xAxes: [{
+              display: true
+            }],
+            yAxes: [{
+              display: true
+            }]
+          }
+      }
+    }));
+    
   }
 
   submitEntry(){
@@ -49,6 +100,8 @@ export class WeightsComponent implements OnInit {
 
   weights: Weight[];
   weight: Weight = new Weight();
+  chart = [];
+
 
   get newWeight() { return this.weightForm.get('newWeight'); }
   get newDate() { return this.weightForm.get('newDate'); }

@@ -1,19 +1,23 @@
 <h1>Your Weight Log</h1>
 <h3> Current Log</h3>
-<table border='1' width='100%' style='border-collapse: collapse;'>
-    <tr>
-      <th>Diary ID</th>
-      <th>Weight</th>
-      <th>Date Weightd</th>
-    </tr>
+<div class="row">
 
-    <tr *ngFor="let weight of weights">
-      <td>{{ weight.diary_id }}</td>
-      <td>{{ weight.weight }}</td>
-      <td>{{ weight.date }}</td>
-    </tr>
-  </table>
+    <table border='1' style="border-collapse: collapse; width: auto;">
+        <tr>
+        <th>Weight</th>
+        <th>Date Weightd</th>
+        </tr>
 
+        <tr *ngFor="let weight of weights">
+          <td>{{ weight.weight }}</td>
+          <td>{{ weight.date.toLocaleTimeString('en', {year: 'numeric', month: 'short', day: 'numeric'}) }}</td>
+        </tr>
+    </table>
+
+    <div *ngIf="chart" class="d-none d-sm-block col-md-8 col-lg-7 col-xl-6">
+        <canvas id="canvas">{{ chart }}</canvas>
+    </div>
+</div>
 <br>
 <h3>New Goals</h3>
 <form [formGroup] = "weightForm" (ngSubmit)="submitEntry()">
@@ -43,3 +47,4 @@
         </tr>
     </table>
 </form>
+
