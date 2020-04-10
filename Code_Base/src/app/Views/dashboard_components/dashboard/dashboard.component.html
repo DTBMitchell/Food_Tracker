@@ -1,34 +1,37 @@
-<div class="row">
-    <div class="container-fluid">
-        <div class="row d-flex d-md-block flex-nowrap wrapper">
-            <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
-                <div class="list-group border-0 text-center text-md-left">
-                    <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">Dashboard</span> </a>
-                    <div class="collapse" id="menu1" data-parent="#sidebar">
-                        <a routerLink="./" class="list-group-item" > Dashboard Home </a>
-                        
-                        <a routerLink="./weights" class="list-group-item" >Weight Log</a>
-                        
-                        <a routerLink="./goals" class="list-group-item">Goal Log</a>
-                    </div>
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="logo">
+            <a routerLink="" class="nav-link">
+            <span class="link-text logo-text"> Home</span>
+                <i class="fas fa-angle-double-right fa-2x"></i></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./" class="nav-link" >
+                <i class="fas fa-home fa-2x"></i>
+                <span class="link-text"> Dash</span></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./weights" class="nav-link" >
+                <i class="fas fa-book-open fa-2x"></i>
+                <span class="link-text">Weight Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./goals" class="nav-link">
+                <i class="fas fa-calendar-check fa-2x"></i><span class="link-text">Goal Log</span></a>
+        </li>
 
-                    <a href="#" class="list-group-item d-inline-block collapsed"><i class="fa fa-film"></i> <span class="d-none d-md-inline">Item 2</span></a>
-                    <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-book"></i> <span class="d-none d-md-inline">Item 3 </span></a>
-                    <div class="collapse" id="menu3" data-parent="#sidebar">
-                        <a href="#" class="list-group-item" data-parent="#menu3">3.1</a>
+        <!-- Pushed to bottom-->
+        <li class="nav-item">
+            <a routerLink="/logout" class="nav-link">
+                <i class="fas fa-door-open fa-2x"></i>
+                <span class="link-text">Logout</span>
+                </a>
+        </li>
+    </ul>
+</nav>
 
-                        <a href="#menu3sub2" class="list-group-item" data-toggle="collapse" aria-expanded="false">3.2 </a>
-                        
-                        <a href="#" class="list-group-item" data-parent="#menu3">3.3</a>
-                    </div>
 
-                </div>
-            </div>
-            <div class="row col-md-9">
-                
-                    <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="text-dark fa fa-navicon fa-lg py-2 p-1">   >></i></a>
-                    <router-outlet></router-outlet>
-            </div>
-        </div>
-    </div>
-</div>
+<main>
+    <router-outlet></router-outlet>
+</main>
