@@ -13,6 +13,7 @@ import { LogoutComponent } from './Controllers/logout/logout.component';
 import { HeaderComponent } from './Controllers/header/header.component';
 import { GoalsComponent } from './Controllers/dashboard_components/goals/goals.component';
 import { WeightsComponent } from './Controllers/dashboard_components/weights/weights.component';
+import { DashboardHomeComponent } from './Controllers/dashboard_components/dashboard-home/dashboard-home.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { WeightsComponent } from './Controllers/dashboard_components/weights/wei
     LogoutComponent,
     HeaderComponent,
     GoalsComponent,
-    WeightsComponent
+    WeightsComponent,
+    DashboardHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,37 @@
-<p>dashboard works!</p>
-<ul>
-    <li ><a class="nav-link" routerLink="./weights">Weight Diary</a></li>
-    <li ><a class="nav-link" routerLink="./goals">Goals</a></li>
-</ul>
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="logo">
+            <a routerLink="" class="nav-link">
+            <span class="link-text logo-text"> Home</span>
+                <i class="fas fa-angle-double-right fa-2x"></i></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./" class="nav-link" >
+                <i class="fas fa-home fa-2x"></i>
+                <span class="link-text"> Dash</span></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./weights" class="nav-link" >
+                <i class="fas fa-book-open fa-2x"></i>
+                <span class="link-text">Weight Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="./goals" class="nav-link">
+                <i class="fas fa-calendar-check fa-2x"></i><span class="link-text">Goal Log</span></a>
+        </li>
 
-<router-outlet></router-outlet>
+        <!-- Pushed to bottom-->
+        <li class="nav-item">
+            <a routerLink="/logout" class="nav-link">
+                <i class="fas fa-door-open fa-2x"></i>
+                <span class="link-text">Logout</span>
+                </a>
+        </li>
+    </ul>
+</nav>
+
+
+<main>
+    <router-outlet></router-outlet>
+</main>
