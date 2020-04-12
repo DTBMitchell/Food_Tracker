@@ -7,8 +7,8 @@ import { FoodApiServiceService } from 'src/app/food-api-service.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: '../../views/register/register.component.html',
-  styleUrls: ['../../views/register/register.component.css']
+  templateUrl: '../../Views/register/register.component.html',
+  styleUrls: ['../../Views/register/register.component.css']
 })
 export class RegisterComponent implements OnInit {
   registrationForm= this.fb.group({

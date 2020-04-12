@@ -9,7 +9,7 @@ import{ Observable } from 'rxjs';
 })
 export class AuthApiService {
 
-  PHP_API_SERVER = "http://localhost:80";
+  PHP_API_SERVER = "http://192.168.0.2:80";
 
   constructor(private httpClient: HttpClient) { }
 

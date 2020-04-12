@@ -5,8 +5,8 @@ import { Goal } from 'src/app/Models/goal'
 
 @Component({
   selector: 'app-goals',
-  templateUrl: '../../../views/dashboard_components/goals/goals.component.html',
-  styleUrls: ['../../../views/dashboard_components/goals/goals.component.css']
+  templateUrl: '../../../Views/dashboard_components/goals/goals.component.html',
+  styleUrls: ['../../../Views/dashboard_components/goals/goals.component.css']
 })
 export class GoalsComponent implements OnInit {
 

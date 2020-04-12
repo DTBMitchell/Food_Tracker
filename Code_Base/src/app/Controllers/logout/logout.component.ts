@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
-  templateUrl: '../../views/logout/logout.component.html',
-  styleUrls: ['../../views/logout/logout.component.css']
+  templateUrl: '../../Views/logout/logout.component.html',
+  styleUrls: ['../../Views/logout/logout.component.css']
 })
 export class LogoutComponent implements OnInit {
 
