@@ -15,8 +15,6 @@ const routes: Routes = [
   {path: 'logon', component: LogonComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'register', component: RegisterComponent},
-  //{path: 'goals', component: GoalsComponent},
-  //{path: 'weights', component:WeightsComponent},
 
   {path: 'dashboard', 
   component: DashboardComponent,
@@ -29,7 +27,7 @@ const routes: Routes = [
     {path: '**', component:DashboardHomeComponent}
   ]},
 
-  {path: '**', component:HomeComponent}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
