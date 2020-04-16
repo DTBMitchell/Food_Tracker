@@ -22,6 +22,8 @@ export class WeightsComponent implements OnInit {
     this.foodApiService.readAllUserWeights().subscribe((weights: Weight[]) => {
       let dates = [];
       let weightInputs: number[] = [];
+      let dataArray = [];
+      let sumY = 0.0;
 
       //Format dates and push onto arrays
       weights.forEach(weight => {
@@ -30,14 +32,33 @@ export class WeightsComponent implements OnInit {
 
         //Create seperate Date objects for chart
         dates.push(new Date(weight.date).toLocaleDateString('en', {year: 'numeric', month: 'short', day: 'numeric'}));
-        weightInputs.push(weight.weight)
+        weightInputs.push(weight.weight);
+        dataArray.push(
+          {
+            x: (new Date(weight.date)).toLocaleDateString(),
+            y: weight.weight
+          });
+
+          sumY += Number(weight.weight);
       });
+
+      let n = dataArray.length;
+      let trendPoints = [
+        {
+          x: dataArray[n-1].x,
+          y: dataArray[n-1].y
+        },
+        {
+          x: dataArray[0].x,
+          y: sumY/n
+        }
+      ]
 
       //Send data to table
       this.weights=weights;
 
       //Send data to chart
-      this.buildChart(dates, weightInputs);
+      this.buildChart(dataArray, trendPoints);
     });
 
     this.weightForm = new FormGroup({
@@ -53,35 +74,57 @@ export class WeightsComponent implements OnInit {
   }
 
   //Builds chart data to send to view
-  buildChart(dates =[], weightInputs = []){
+  buildChart(dataArray = [], trendPoints = []){
     //console.log(dates,weightInputs)
     this.chart.push(new Chart('canvas',{
-      type: 'line',
+      type: 'scatter',
       data: {
-        labels: dates,
-        datasets:[
-          {
-            data: weightInputs,
-            borderColor: 'blue',
-            fill: false
-          }
-        ]
+        datasets:[{
+          label: 'Weight Entries',
+          data: dataArray,
+          pointBackgroundColor: 'blue',
+          backgroundColor: 'blue',
+          borderColor:'blue'
+        },
+        {
+          label: 'Average Weight Trend',
+          data: trendPoints,
+          pointBackgroundColor: 'yellow',
+          type: 'line',
+          borderColor: 'green',
+          backgroundColor: 'yellow',
+          fill: 'none',
+        }
+      ],
       },
       options: {
         legend: {
-          display: false
+          display: true,
+
         },
-          scales: {
-            xAxes: [{
-              display: true
-            }],
-            yAxes: [{
-              display: true
-            }]
-          }
+        tooltips: {
+          mode: 'index',
+          intersect: true
+        },
+        scales: {
+          xAxes: [{
+            display: true,
+            type: 'time',
+            ticks: {
+              autoSkip: true,
+            },
+            time:{
+              unit: 'day',
+              unitStepSize: 1,
+              displayFormats: {
+                day: 'MMM DD'
+              }
+            },
+            distribution: 'series'
+          }]
+        },
       }
     }));
-    
   }
 
   submitEntry(){
